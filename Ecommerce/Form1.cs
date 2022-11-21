@@ -13,21 +13,39 @@ namespace Ecommerce
     public partial class Form1 : Form
     {
         private Prodotto p;
+        private Prodotto p1;
         private Carrello c;
         Prodotto[] prodotti = new Prodotto[999];
         public Form1()
         {
             InitializeComponent();
 
-            p = new Prodotto("k870t", "ajazz", 80, "epomaker", "bianca");
+            p = new Prodotto("k870t", "tastiera", 80, "ajazz", "bianca");
+            p1 = new Prodotto("SMA71", "Samsung", 299, "A71", "nero");
             prodotti[0] = p;
             c = new Carrello("tastiera", prodotti);
+            c.aggiungi(p);
+        }
 
-            listBoxId.Items.Add(prodotti[0].toStringId());
-            listBoxNome.Items.Add(prodotti[0].toStringNome());
-            listBoxPrezzo.Items.Add(prodotti[0].toStringPrezzo());
-            listBoxProduttore.Items.Add(prodotti[0].toStringProduttore());
-            listBoxDescrizione.Items.Add(prodotti[0].toStringDescrizione());
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            for (int i = 0; i < prodotti.Length; i++)
+            {
+                if (prodotti[i] == null)
+                {
+                    return;
+                }
+                else
+                {
+                    listBoxId.Items.Add(prodotti[i].toStringId());
+                    listBoxNome.Items.Add(prodotti[i].toStringNome());
+                    listBoxPrezzo.Items.Add(prodotti[i].toStringPrezzo());
+                    listBoxProduttore.Items.Add(prodotti[i].toStringProduttore());
+                    listBoxDescrizione.Items.Add(prodotti[i].toStringDescrizione());
+                }
+
+            }
         }
 
         private void listBoxId_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -103,6 +121,12 @@ namespace Ecommerce
                     MessageBox.Show("Non Eliminato");
                 }
             }
+        }
+
+        private void buttonSvuotaCarrello_Click(object sender, EventArgs e)
+        {
+            //c.svuota();
+            Form1_Load(sender, e);
         }
     }
 }

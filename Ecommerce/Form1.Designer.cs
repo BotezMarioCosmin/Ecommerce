@@ -38,6 +38,7 @@
             this.labelPrezzo = new System.Windows.Forms.Label();
             this.labelProduttore = new System.Windows.Forms.Label();
             this.labelDescrizione = new System.Windows.Forms.Label();
+            this.buttonSvuotaCarrello = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxId
@@ -135,11 +136,23 @@
             this.labelDescrizione.TabIndex = 10;
             this.labelDescrizione.Text = "DESCRIZIONE";
             // 
+            // buttonSvuotaCarrello
+            // 
+            this.buttonSvuotaCarrello.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSvuotaCarrello.Location = new System.Drawing.Point(286, 369);
+            this.buttonSvuotaCarrello.Name = "buttonSvuotaCarrello";
+            this.buttonSvuotaCarrello.Size = new System.Drawing.Size(171, 54);
+            this.buttonSvuotaCarrello.TabIndex = 11;
+            this.buttonSvuotaCarrello.Text = "Svuota Carrello";
+            this.buttonSvuotaCarrello.UseVisualStyleBackColor = true;
+            this.buttonSvuotaCarrello.Click += new System.EventHandler(this.buttonSvuotaCarrello_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonSvuotaCarrello);
             this.Controls.Add(this.labelDescrizione);
             this.Controls.Add(this.labelProduttore);
             this.Controls.Add(this.labelPrezzo);
@@ -152,6 +165,7 @@
             this.Controls.Add(this.listBoxId);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,6 +182,7 @@
         private System.Windows.Forms.Label labelPrezzo;
         private System.Windows.Forms.Label labelProduttore;
         private System.Windows.Forms.Label labelDescrizione;
+        private System.Windows.Forms.Button buttonSvuotaCarrello;
     }
 }
 
