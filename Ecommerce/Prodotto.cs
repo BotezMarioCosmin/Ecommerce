@@ -52,5 +52,30 @@ namespace Ecommerce
             set { _descrizione = value; }
             get { return _descrizione; }
         }
+
+        public string toStringId()
+        {
+            return Id;
+        }
+
+        public string toStringNome()
+        {
+            return Nome;
+        }
+
+        public float toStringPrezzo()
+        {
+            return Prezzo;
+        }
+
+        public string toStringProduttore()
+        {
+            return Produttore;
+        }
+
+        public string toStringDescrizione()
+        {
+            return Descrizione;
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace Ecommerce
     public class Carrello
     {
         private string _id; //primary key
-        private int numeroprodotti = 0;
+        private int _numeroprodotti = 0;
         private Prodotto[] prodotti;
 
         public Carrello(string id1, Prodotto[] arrayp)
@@ -26,13 +26,13 @@ namespace Ecommerce
 
         public void aggiungi(Prodotto p)
         {
-            prodotti[numeroprodotti] = p;
-            numeroprodotti++;
+            prodotti[_numeroprodotti] = p;
+            _numeroprodotti++;
         }
 
         public Prodotto rimuovi(Prodotto p)
         {
-            for (int i = 0; i < numeroprodotti; i++)
+            for (int i = 0; i < _numeroprodotti; i++)
             {
                 if (p == prodotti[i])
                 {
@@ -46,7 +46,7 @@ namespace Ecommerce
         public Prodotto[] svuota()
         {
             Prodotto[] array = new Prodotto[999];
-            for (int i = 0; i < numeroprodotti; i++)
+            for (int i = 0; i < _numeroprodotti; i++)
             {
                 array[i] = prodotti[i];
                 prodotti[i] = null;
